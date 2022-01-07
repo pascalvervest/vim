@@ -1,28 +1,25 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-    Plugin 'VundleVim/Vundle.vim'
+    Plug 'morhetz/gruvbox'
+    Plug 'scrooloose/nerdtree'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'jlanzarotta/bufexplorer'
 
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plugin 'junegunn/fzf.vim'
-    Plugin 'jlanzarotta/bufexplorer'
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+    Plug 'scrooloose/syntastic'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'jiangmiao/auto-pairs'
 
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-    Plugin 'Syntastic'
-    Plugin 'sheerun/vim-polyglot'
-    Plugin 'jiangmiao/auto-pairs'
+    Plug 'bling/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
-    Plugin 'bling/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
 syntax on
 set autoindent
@@ -35,6 +32,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set textwidth=80
+set bg=dark
 
 set incsearch
 set ignorecase
@@ -45,8 +43,6 @@ set history=1000
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-
-colorscheme sublimemonokai
 
 set statusline+=\ %F\ %#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -130,6 +126,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
+autocmd vimenter * nested colorscheme gruvbox
 autocmd VimEnter * NERDTree
 autocmd VimEnter * NERDTree | wincmd p
 autocmd StdinReadPre * let s:std_in=1
