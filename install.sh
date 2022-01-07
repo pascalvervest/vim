@@ -8,7 +8,4 @@ CURRENTDIR=${PWD}
 cp -R $CURRENTDIR/.vim ~/.vim
 cp $CURRENTDIR/.vimrc ~/.vimrc
 
-# install vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-echo "Installation done. Run :PluginInstall in Vim to set up bundles"
+echo "Installation done. Plugins will be automatically installed when running vim for the first time"
