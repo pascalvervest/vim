@@ -22,6 +22,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'sheerun/vim-polyglot'
     Plug 'jiangmiao/auto-pairs'
 
+    Plug 'SirVer/ultisnips'
+
     Plug 'bling/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
@@ -70,6 +72,15 @@ nnoremap <F6> :BufExplorerHorizontalSplit<CR>
 let g:bufExplorerSplitBelow=1        " Split new window below current.
 let g:bufExplorerSplitHorzSize=10     " New split window is n rows high.
 
+" Configure Ultisnips
+let g:UltiSnipsExpandTrigger = "<Tab>"
+let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+let g:UltiSnipsListSnippets = "<M-Tab>"
+
+" Set a custom snippets directory
+let g:UltiSnipsSnippetsDir = $HOME . "/.vim/ultisnips/"
+let g:UltiSnipsSnippetDirectories = ["ultisnips"]
 
 " MAPPINGS --------------------------------------------------------------- {{{
 

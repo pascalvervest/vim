@@ -4,7 +4,6 @@ echo "Installing vim required files + config..."
 
 CURRENTDIR=${PWD}
 
-# install colorscheme
 cp -R $CURRENTDIR/.vim ~/.vim
 cp $CURRENTDIR/.vimrc ~/.vimrc
 
