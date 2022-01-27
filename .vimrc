@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'SirVer/ultisnips'
     Plug 'sandermarechal/emptylines'
+    Plug 'tobyS/pdv'
 
     Plug 'bling/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -101,6 +102,10 @@ imap <silent> <Up> <Esc>[ei
 imap <silent> <Down> <Esc>]ei
 inoremap <silent> <Left> <C-D>
 inoremap <silent> <Right> <C-T>
+
+" Configure PDV
+let g:pdv_template_dir = $HOME . "/.vim/templates/pdv/"
+nnoremap <buffer> <C-P> :call pdv#DocumentWithSnip()<CR>
 
 " MAPPINGS --------------------------------------------------------------- {{{
 
