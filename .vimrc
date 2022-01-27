@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jiangmiao/auto-pairs'
 
     Plug 'SirVer/ultisnips'
+    Plug 'sandermarechal/emptylines'
 
     Plug 'bling/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -68,6 +69,9 @@ nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :NERDTreeFind<CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <F6> :BufExplorerHorizontalSplit<CR>
+
+" Map ; to add ; to the end of the line, when missing
+nnoremap <buffer> ; :s/\([^;]\)$/\1;/<cr>
 
 let g:bufExplorerSplitBelow=1        " Split new window below current.
 let g:bufExplorerSplitHorzSize=10     " New split window is n rows high.
@@ -144,7 +148,7 @@ noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
-map ; :Files<CR>
+map . :Files<CR>
 
 " Have nerdtree ignore certain files and directories.
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
