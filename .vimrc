@@ -82,6 +82,22 @@ let g:UltiSnipsListSnippets = "<M-Tab>"
 let g:UltiSnipsSnippetsDir = $HOME . "/.vim/ultisnips/"
 let g:UltiSnipsSnippetDirectories = ["ultisnips"]
 
+" Remap arrow keys
+nnoremap <silent> <Up> :call DelEmptyLineAbove()<CR>
+nnoremap <silent> <Down> :call AddEmptyLineAbove()<CR>
+nnoremap <silent> <C-Up> :call DelEmptyLineBelow()<CR>
+nnoremap <silent> <C-Down> :call AddEmptyLineBelow()<CR>
+nnoremap <silent> <Left> <<
+nnoremap <silent> <Right> >>
+vmap <silent> <Up> [egv
+vmap <silent> <Down> ]egv
+vnoremap <silent> <Left> <gv
+vnoremap <silent> <Right> >gv
+imap <silent> <Up> <Esc>[ei
+imap <silent> <Down> <Esc>]ei
+inoremap <silent> <Left> <C-D>
+inoremap <silent> <Right> <C-T>
+
 " MAPPINGS --------------------------------------------------------------- {{{
 
 " Set space as the leader key.
